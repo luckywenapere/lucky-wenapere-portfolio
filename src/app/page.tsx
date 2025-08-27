@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,9 +80,9 @@ export default function Home() {
     <div className="relative w-full font-sans">
       {/* Fixed top bar */}
       <header className={`fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 z-30 transition-colors duration-300 ${headerTextColor}`}>
-        <a href="/" className="font-bold text-lg hover:opacity-80">
+        <Link href="/" className="font-bold text-lg hover:opacity-80">
           LW
-        </a>
+        </Link>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="font-bold text-lg hover:opacity-80"
@@ -100,15 +101,15 @@ export default function Home() {
             ✕ Close
           </button>
           <nav className="flex flex-col gap-4">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Home
-            </a>
-            <a href="/about" className="hover:underline">
+            </Link>
+            <Link href="/about" className="hover:underline">
               About
-            </a>
-            <a href="/contact" className="hover:underline">
+            </Link>
+            <Link href="/contact" className="hover:underline">
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       )}
