@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section className="relative h-[100svh] w-full overflow-hidden bg-black">
-      {/* Background + vignette */}
-      <div className="absolute inset-0">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/img/bg.png"
           alt="Hero background"
@@ -13,8 +13,10 @@ export default function HeroSection() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/95" />
-        <div className="absolute inset-0 [background:radial-gradient(65%_55%_at_50%_40%,transparent,rgba(0,0,0,0.6))]" />
+        {/* Reduced gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        {/* Lighter vignette effect */}
+        <div className="absolute inset-0 [background:radial-gradient(65%_55%_at_50%_40%,transparent,rgba(0,0,0,0.3))]" />
       </div>
 
       {/* Foreground portrait */}
