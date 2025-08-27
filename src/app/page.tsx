@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import ToolsSection from "@/components/ToolsSection";
+import Footer from "@/components/Footer";
+
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,16 +29,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative w-full font-sans">
+    <div className="relative w-full font-sans min-h-screen">
       <Header 
         headerTextColor={headerTextColor} 
         menuOpen={menuOpen} 
         setMenuOpen={setMenuOpen} 
       />
       
-      <HeroSection />
-      <ExpertiseSection />
-      <ToolsSection />
+      {/* Main content - no bottom padding needed for sticky footer */}
+      <main>
+        <HeroSection />
+        <ExpertiseSection />
+        <ToolsSection />
+      </main>
+      
+      <Footer />
     </div>
   );
 }
