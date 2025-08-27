@@ -48,40 +48,46 @@ const expertiseItems = [
 
 export default function ExpertiseSection() {
   return (
-    <section className="relative min-h-screen w-full bg-white z-20">
+    <section className="relative min-h-screen w-full bg-gray-100 z-20">
       <div className="max-w-7xl mx-auto px-6 py-20">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-12">
           <h2 className="text-6xl md:text-8xl font-bold text-black mb-4">
             MY
           </h2>
           <h2 className="text-6xl md:text-8xl font-bold text-black">
             EXPERTISE
           </h2>
-          <div className="w-full h-px bg-black mt-8"></div>
+          <div className="w-full h-px bg-black mt-6"></div>
         </div>
 
         {/* Expertise List */}
-        <div className="space-y-12">
-          {expertiseItems.map((item) => (
-            <div key={item.number} className="grid grid-cols-12 gap-6 items-start">
-              {/* Number */}
-              <div className="col-span-1">
-                <span className="text-2xl font-light text-gray-600">
-                  {item.number}
-                </span>
+        <div className="space-y-2">
+          {expertiseItems.map((item, index) => (
+            <div key={item.number}>
+              <div className="flex items-start py-3">
+                {/* Number */}
+                <div className="w-12 flex-shrink-0">
+                  <span className="text-lg font-medium text-gray-700">
+                    {item.number}
+                  </span>
+                </div>
+                
+                {/* Title and Description */}
+                <div className="flex-1 pl-8">
+                  <h3 className="text-xl md:text-2xl font-medium text-black mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
               
-              {/* Title and Description */}
-              <div className="col-span-11">
-                <h3 className="text-xl md:text-2xl font-medium text-black mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
-                <div className="w-full h-px bg-gray-200 mt-8"></div>
-              </div>
+              {/* Divider line (except for last item) */}
+              {index < expertiseItems.length - 1 && (
+                <div className="w-full h-px bg-gray-300"></div>
+              )}
             </div>
           ))}
         </div>
