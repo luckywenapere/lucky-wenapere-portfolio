@@ -48,7 +48,7 @@ const expertiseItems = [
 
 export default function ExpertiseSection() {
   return (
-    <section className="relative min-h-screen w-full bg-gray-100 z-20">
+    <section id="expertise-section" className="relative min-h-screen w-full bg-gray-100 z-20">
       <div className="max-w-7xl mx-auto px-6 py-20">
         {/* Section Header */}
         <div className="mb-12">

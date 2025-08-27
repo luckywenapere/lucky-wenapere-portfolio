@@ -10,39 +10,73 @@ interface HeaderProps {
 }
 
 export default function Header({ headerTextColor, menuOpen, setMenuOpen }: HeaderProps) {
+  const isScrolled = headerTextColor === "text-black";
+  
   return (
-    <header className={`fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 z-30 transition-colors duration-300 ${headerTextColor}`}>
-      <Link href="/" className="font-bold text-lg hover:opacity-80">
+    <header className={`fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 z-30 transition-all duration-300 ${headerTextColor} ${
+      isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+    }`}>
+      <Link href="/" className="font-bold text-lg hover:opacity-80 transition-opacity">
         LW
       </Link>
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="font-bold text-lg hover:opacity-80"
+        className="font-bold text-lg hover:opacity-80 transition-opacity"
       >
         MENU
       </button>
 
       {/* Sidebar menu */}
       {menuOpen && (
-        <div className="fixed top-0 right-0 h-full w-64 bg-black/90 text-white p-6 z-40 shadow-lg">
-          <button
-            className="mb-6 font-bold hover:opacity-80"
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-30"
             onClick={() => setMenuOpen(false)}
-          >
-            ✕ Close
-          </button>
-          <nav className="flex flex-col gap-4">
-            <Link href="/" className="hover:underline">
-              Home
-            </Link>
-            <Link href="/about" className="hover:underline">
-              About
-            </Link>
-            <Link href="/contact" className="hover:underline">
-              Contact
-            </Link>
-          </nav>
-        </div>
+          />
+          
+          {/* Sidebar */}
+          <div className="fixed top-0 right-0 h-full w-64 bg-black text-white p-6 z-40 shadow-xl transform transition-transform duration-300">
+            <button
+              className="mb-6 font-bold hover:opacity-80 transition-opacity"
+              onClick={() => setMenuOpen(false)}
+            >
+              ✕ Close
+            </button>
+            <nav className="flex flex-col gap-4">
+              <button 
+                onClick={() => {
+                  setMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="hover:text-yellow-400 transition-colors text-left"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => {
+                  setMenuOpen(false);
+                  const expertiseSection = document.getElementById('expertise-section');
+                  expertiseSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hover:text-yellow-400 transition-colors text-left"
+              >
+                About
+              </button>
+              {/*
+              <button 
+                onClick={() => {
+                  setMenuOpen(false);
+                  const footer = document.getElementById('footer-section');
+                  footer?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hover:text-yellow-400 transition-colors text-left"
+              >
+                Contact
+              </button> */}
+            </nav>
+          </div>
+        </>
       )}
     </header>
   );
