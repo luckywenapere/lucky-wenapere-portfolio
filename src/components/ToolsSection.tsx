@@ -134,6 +134,19 @@ export default function ToolsSection() {
             </div>
 
             <div className="flex flex-col items-center group">
+                  <div className="w-16 h-16 mb-3 flex items-center justify-center">
+                <Image
+                  src="/img/tool-logos/react.png"
+                  alt="React"
+                  width={64}
+                  height={64}
+                  className="group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <span className="text-yellow-400 text-sm font-medium text-center">React</span>
+            </div>
+
+            <div className="flex flex-col items-center group">
               <div className="w-16 h-16 mb-3 flex items-center justify-center">
                 <Image
                   src="/img/tool-logos/nextjs.png"
