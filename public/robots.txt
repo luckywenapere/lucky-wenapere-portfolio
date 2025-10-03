@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucky-wenapere.vercel.app/sitemap.xml
