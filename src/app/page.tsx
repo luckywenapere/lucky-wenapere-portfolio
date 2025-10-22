@@ -1,5 +1,3 @@
-"use client"
-
 import { Metadata } from "next";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
@@ -13,7 +11,7 @@ export const metadata: Metadata = {
   title: "Lucky Wenapere – Portfolio & Creative Projects",
   description:
     "Official website of Lucky Wenapere. Explore my portfolio, expertise, creative showreel, and tools I use to build impactful projects.",
-  keywords: ["Lucky Wenapere", "portfolio", "showreel", "creative projects", "next.js"],
+  keywords: ["Lucky Wenapere", "portfolio", "showreel", "creative projects", "next.js", "Luckydidthis", "Lucky Wena"],
   authors: [{ name: "Lucky Wenapere" }],
   openGraph: {
     title: "Lucky Wenapere – Portfolio & Creative Projects",
