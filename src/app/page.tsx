@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     "Official website of Lucky Wenapere. Explore my portfolio, expertise, creative showreel, and tools I use to build impactful projects.",
   keywords: ["Lucky Wenapere", "portfolio", "showreel", "creative projects", "next.js", "Luckydidthis", "Lucky Wena"],
   authors: [{ name: "Lucky Wenapere" }],
+  verification: {
+    google: "pyUkNjr57PrE-5ziJNrc3Iy8W9OY1SMdd0Lms52Ywow",
+  },
   openGraph: {
     title: "Lucky Wenapere – Portfolio & Creative Projects",
     description:
