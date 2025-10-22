@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Lucky Wenapere" }],
   verification: {
     google: "pyUkNjr57PrE-5ziJNrc3Iy8W9OY1SMdd0Lms52Ywow",
+    other: {
+      msvalidate: ["AB4A2213C8F53CCA8168D621E35D9363"],
+    },
   },
   openGraph: {
     title: "Lucky Wenapere – Portfolio & Creative Projects",
