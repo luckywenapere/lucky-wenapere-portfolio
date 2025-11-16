@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllPosts } from "@/src/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 
 export default function BlogPage() {
   const posts = getAllPosts();

@@ -1,4 +1,4 @@
-import { getPostSlugs, getPostHtml } from "@/src/lib/posts";
+import { getPostSlugs, getPostHtml } from "@/lib/posts";
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
