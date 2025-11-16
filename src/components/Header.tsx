@@ -79,7 +79,7 @@ export default function Header({ headerTextColor, menuOpen, setMenuOpen }: Heade
                   onClick={() => setMenuOpen(false)}
                   className="hover:text-yellow-400 transition-colors text-left"
                 >
-                  Read My Weekly Thoughts.
+                  Thoughts
               </Link>
             </nav>
           </div>
