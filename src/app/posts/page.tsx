@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import Header from "@/components/Header";
 
 export default function BlogPage() {
   const posts = getAllPosts();

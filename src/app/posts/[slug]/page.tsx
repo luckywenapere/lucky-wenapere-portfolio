@@ -1,5 +1,6 @@
 import { getPostSlugs, getPostHtml } from "@/lib/posts";
 import Link from "next/link";
+import Header from "@/components/Header";
 
 
 export async function generateStaticParams() {
