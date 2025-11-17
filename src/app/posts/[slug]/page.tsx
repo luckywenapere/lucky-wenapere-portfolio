@@ -13,7 +13,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
       <Link
-        href="/blog"
+        href="/posts"
         className="text-yellow-400 hover:underline mb-6 inline-block"
       >
         ← Back to Blog
