@@ -1,4 +1,6 @@
 import { getPostSlugs, getPostHtml } from "@/lib/posts";
+import Link from "next/link";
+
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
