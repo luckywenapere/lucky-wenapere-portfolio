@@ -17,7 +17,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         href="/posts"
         className="text-yellow-400 hover:underline mb-6 inline-block"
       >
-        ← Back to Blog
+        <h3>← Back to Blog</h3>
       </Link>
 
       <article className="max-w-3xl mx-auto px-6 py-12 prose prose-lg dark:prose-invert">

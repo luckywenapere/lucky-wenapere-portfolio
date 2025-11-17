@@ -8,7 +8,7 @@ export default function BlogPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
       <Link href="/" className="text-yellow-400 hover:underline mb-6 inline-block" >
-        ← Back to Home
+        <h3>← Back to Home</h3>
       </Link>
 
       <h1 className="text-4xl font-bold mb-8">Welcome to my blog where I document my life and the lessons I learn along the way.</h1>
