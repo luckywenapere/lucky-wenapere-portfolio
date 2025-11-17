@@ -3,18 +3,14 @@
 import { useState } from "react";
 import NewsletterModal from "@/components/NewsletterModal";
 import Link from "next/link";
+import { PostMeta } from "@/lib/posts";
 
-interface PostProps {
-  meta: {
-    title: string;
-    date: string;
-    author: string;
-  };
+interface PostPageClientProps {
+  meta: PostMeta;
   htmlContent: string;
 }
 
-export default function PostPageClient({ meta, htmlContent }: PostProps)
- {
+export default function PostPageClient({ meta, htmlContent }: PostPageClientProps) {
   const [subscribed, setSubscribed] = useState(false);
 
   return (

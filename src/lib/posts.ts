@@ -6,7 +6,13 @@ import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "src/posts");
 
-export function getPostSlugs() {
+export interface PostMeta {
+  title: string;
+  date: string;
+  author: string;
+}
+
+export function getPostSlugs(): string[] {
   return fs.readdirSync(postsDirectory);
 }
 
@@ -17,9 +23,15 @@ export function getPostBySlug(slug: string) {
 
   const { data, content } = matter(fileContents);
 
+  const meta: PostMeta = {
+    title: data.title,
+    date: data.date,
+    author: data.author,
+  };
+
   return {
     slug: realSlug,
-    meta: data,
+    meta,
     content,
   };
 }
@@ -37,11 +49,7 @@ export async function getPostHtml(slug: string) {
 }
 
 export function getAllPosts() {
-  const slugs = getPostSlugs();
-
-  const posts = slugs
+  return getPostSlugs()
     .map((slug) => getPostBySlug(slug))
     .sort((a, b) => (a.meta.date > b.meta.date ? -1 : 1));
-
-  return posts;
 }
