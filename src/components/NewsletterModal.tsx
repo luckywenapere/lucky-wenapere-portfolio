@@ -6,7 +6,12 @@ type Props = {
   onSuccess: () => void;
 };
 
-export default function NewsletterModal({ onSuccess }: Props) {
+export default interface NewsletterModalProps {
+  onSuccess: () => void;
+}
+
+function NewsletterModal({ onSuccess }: NewsletterModalProps)
+ {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [subscribed, setSubscribed] = useState(false);
