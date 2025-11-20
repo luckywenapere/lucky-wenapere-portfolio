@@ -14,19 +14,19 @@ export default function Footer() {
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/itsluckywena",
+      url: "https://instagram.com/luckydidthis",
       hoverColor: "hover:text-pink-400"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://ng.linkedin.com/in/lucky-oyinbrakemi-wenapere-9380a9142",
+      url: "https://ng.linkedin.com/in/lucky-oyinbrakemi-wenapere",
       hoverColor: "hover:text-blue-400"
     },
     {
       name: "Email",
       icon: Mail,
-      url: "mailto:luckydio10@gmail.com",
+      url: "mailto:luckywenapere@gmail.com",
       hoverColor: "hover:text-red-400"
     },
     {
