@@ -1,17 +1,12 @@
-import { getPostSlugs, getPostHtml } from "@/lib/posts";
 import PostPageClient from "./PostPageClient";
+import { getPostHtml } from "@/lib/posts";
 
-export async function generateStaticParams() {
-  const slugs = getPostSlugs();
-  return slugs.map((slug) => ({
-    slug: slug.replace(".md", ""),
-  }));
+interface Params {
+  params: { slug: string };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: Params) {
   const { meta, htmlContent } = await getPostHtml(params.slug);
 
-  return (
-    <PostPageClient meta={meta} htmlContent={htmlContent} />
-  );
+  return <PostPageClient meta={meta} htmlContent={htmlContent} />;
 }

@@ -26,12 +26,8 @@ export default function NewsletterModal({ onSuccess }: NewsletterModalProps) {
 
       setSubscribed(true);
       onSuccess();
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("Something went wrong");
-      }
+    } catch (err: any) {
+      setError(err.message || "Something went wrong");
     }
   };
 
@@ -48,7 +44,6 @@ export default function NewsletterModal({ onSuccess }: NewsletterModalProps) {
         </button>
 
         <h2 className="text-2xl font-bold mb-4">Subscribe to view this post</h2>
-
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="email"
@@ -58,14 +53,12 @@ export default function NewsletterModal({ onSuccess }: NewsletterModalProps) {
             required
             className="border p-2 rounded"
           />
-
           <button
             type="submit"
             className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded hover:bg-yellow-300"
           >
             Subscribe
           </button>
-
           {error && <p className="text-red-500">{error}</p>}
         </form>
       </div>

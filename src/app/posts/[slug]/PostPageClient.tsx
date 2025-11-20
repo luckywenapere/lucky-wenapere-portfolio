@@ -38,7 +38,7 @@ export default function PostPageClient({ meta, htmlContent }: PostPageClientProp
         href="/"
         className="text-yellow-400 hover:underline mt-8 inline-block"
       >
-        ← Back to Home
+          ← Home
       </Link>
     </div>
   );
