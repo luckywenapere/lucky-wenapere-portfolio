@@ -13,7 +13,7 @@ export default function NewsletterModal({ onSuccess }: NewsletterModalProps) {
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+    e.preventDefault();
     setError("");
 
     try {
@@ -27,8 +27,10 @@ export default function NewsletterModal({ onSuccess }: NewsletterModalProps) {
 
       setSubscribed(true);
       onSuccess();
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "Something went wrong";
+      setError(message);
     }
   };
 
@@ -44,7 +46,10 @@ export default function NewsletterModal({ onSuccess }: NewsletterModalProps) {
           ✕
         </button>
 
-        <h2 className="text-2xl font-bold mb-4">Subscribe to view this post</h2>
+        <h2 className="text-2xl font-bold mb-4">
+          Subscribe to view this post
+        </h2>
+
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="email"
@@ -54,12 +59,14 @@ export default function NewsletterModal({ onSuccess }: NewsletterModalProps) {
             required
             className="border p-2 rounded"
           />
+
           <button
             type="submit"
             className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded hover:bg-yellow-300"
           >
             Subscribe
           </button>
+
           {error && <p className="text-red-500">{error}</p>}
         </form>
       </div>
