@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
 
     // Kit API endpoint
     const response = await fetch(
-      `https://api.convertkit.com/v3/forms/${process.env.KIT_FORM_ID}/subscribe`,
+      `https://app.kit.com/forms/${process.env.KIT_FORM_ID}/subscribe`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
