@@ -5,7 +5,7 @@ author: "Lucky Wenapere"
 ---
 
 
-TWho I am has always been kind of a mystery to me. I mean, obviously I know who I am, but what's really puzzling is who people think I am.
+Who I am has always been kind of a mystery to me. I mean, obviously I know who I am, but what's really puzzling is who people think I am.
 
 You know? Sometimes I get these little glimpses, these moments where I catch a hint of how others see me, but the full picture? I've never really been able to wrap my head around it.
 
