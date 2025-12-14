@@ -5,8 +5,10 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import ShowreelSection from "@/components/ShowreelSection";
+
 import ToolsSection from "@/components/ToolsSection";
 import Footer from "@/components/Footer";
+import ClientsSection from "@/components/ClientsSection";
 
 export default function HomeClient() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,6 +49,7 @@ export default function HomeClient() {
         <HeroSection />
         <ExpertiseSection />
         <ShowreelSection />
+        <ClientsSection />
         <ToolsSection />
       </main>
       <Footer />
