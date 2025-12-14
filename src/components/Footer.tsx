@@ -20,7 +20,7 @@ export default function Footer() {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://ng.linkedin.com/in/lucky-oyinbrakemi-wenapere",
+      url: "https://ng.linkedin.com/in/lucky-wenapere",
       hoverColor: "hover:text-blue-400"
     },
     {
