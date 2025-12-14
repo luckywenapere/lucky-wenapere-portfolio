@@ -1,53 +1,5 @@
 "use client";
 
-const expertiseItems = [
-  {
-    number: "01",
-    title: "Graphic Design",
-    description: "Branding, visual identity, posters, album covers, and digital design"
-  },
-  {
-    number: "02", 
-    title: "Filmmaking",
-    description: "Directing, cinematography, and storytelling through visuals"
-  },
-  {
-    number: "03",
-    title: "Video Editing & Color Grading", 
-    description: "Professional editing, color correction, and cinematic grading"
-  },
-  {
-    number: "04",
-    title: "Web Design & Full-Stack Development",
-    description: "Designing and coding responsive, modern websites and apps"
-  },
-  {
-    number: "05",
-    title: "Creative Leadership",
-    description: "Founder and leader of Innr Trth, guiding teams and projects"
-  },
-  {
-    number: "06",
-    title: "Music & Sound",
-    description: "Singer, songwriter, and music producer creating original soundscapes"
-  },
-  {
-    number: "07",
-    title: "Writing",
-    description: "Scriptwriting, storytelling, and songwriting with emotional impact"
-  },
-  {
-    number: "08",
-    title: "Talent & Brand Management",
-    description: "Helping artists, brands, and businesses grow with strategy"
-  },
-  {
-    number: "09",
-    title: "Marketing & Strategy",
-    description: "Building campaigns, creative strategies, and brand positioning"
-  }
-];
-
 export default function ExpertiseSection() {
   return (
     <section id="expertise-section" className="relative min-h-screen w-full bg-gray-100 z-20">
@@ -63,35 +15,17 @@ export default function ExpertiseSection() {
           <div className="w-full h-px bg-black mt-6"></div>
         </div>
 
-        {/* Expertise List */}
-        <div className="space-y-2">
-          {expertiseItems.map((item, index) => (
-            <div key={item.number}>
-              <div className="flex items-start py-3">
-                {/* Number */}
-                <div className="w-12 flex-shrink-0">
-                  <span className="text-lg font-medium text-gray-700">
-                    {item.number}
-                  </span>
-                </div>
-                
-                {/* Title and Description */}
-                <div className="flex-1 pl-8">
-                  <h3 className="text-xl md:text-2xl font-medium text-black mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-base text-gray-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-              
-              {/* Divider line (except for last item) */}
-              {index < expertiseItems.length - 1 && (
-                <div className="w-full h-px bg-gray-300"></div>
-              )}
-            </div>
-          ))}
+        {/* Expertise Description */}
+        <div className="max-w-4xl">
+          <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+            I am a multidisciplinary creative professional with a passion for storytelling and innovation across multiple mediums. With expertise in graphic design, filmmaking, and video production, I bring visual concepts to life through branding, cinematography, and professional color grading. My technical skills in web design and full-stack development enable me to create responsive, modern digital experiences.
+          </p>
+          <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+            As the founder and creative leader of Innr Trth, I guide teams and projects with a vision of blending artistry with strategy. My creative capabilities extend to music production, songwriting, and scriptwriting, where I craft emotionally impactful narratives. I also specialize in talent and brand management, helping artists, brands, and businesses realize their full potential through strategic positioning and innovative marketing campaigns.
+          </p>
+          <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+            Whether designing a visual identity, directing a film, developing a web application, or building a brand strategy, I combine creative excellence with strategic thinking to deliver solutions that resonate and inspire.
+          </p>
         </div>
       </div>
     </section>
