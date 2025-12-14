@@ -23,17 +23,23 @@ export default function HeroSection() {
 
       {/* Foreground portrait */}
       <div className="absolute inset-0 z-10">
+        {/* Mobile Hero Image */}
+        <Image
+          src="/img/hero-image-mobile.png"
+          alt="Hero portrait mobile"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover max-w-none object-bottom scale-[1.15] md:hidden"
+        />
+        {/* Desktop Hero Image */}
         <Image
           src="/img/hero-image.png"
           alt="Hero portrait"
           fill
           priority
           sizes="100vw"
-          className="
-            object-cover max-w-none
-            object-bottom scale-[1.15]
-            md:object-contain md:scale-100 md:object-center
-          "
+          className="hidden md:block object-cover max-w-none object-bottom scale-[1.15] md:object-contain md:scale-100 md:object-center"
         />
       </div>
     </section>

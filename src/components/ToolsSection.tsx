@@ -343,72 +343,7 @@ export default function ToolsSection() {
               <span className="text-yellow-400 text-sm font-medium text-center">NPM</span>
             </div>
 
-            {/* Music Production Tools */}
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                <Image
-                  src="/img/tool-logos/fl-studio.png"
-                  alt="FL Studio"
-                  width={64}
-                  height={64}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <span className="text-yellow-400 text-sm font-medium text-center">FL Studio</span>
-            </div>
-
-            {/* Writing & Strategy Tools */}
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                <Image
-                  src="/img/tool-logos/celtx.png"
-                  alt="Celtx"
-                  width={64}
-                  height={64}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <span className="text-yellow-400 text-sm font-medium text-center">Celtx</span>
-            </div>
-
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                <Image
-                  src="/img/tool-logos/final-draft.png"
-                  alt="Final Draft"
-                  width={64}
-                  height={64}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <span className="text-yellow-400 text-sm font-medium text-center">Final Draft</span>
-            </div>
-
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                <Image
-                  src="/img/tool-logos/google-docs.png"
-                  alt="Google Docs"
-                  width={64}
-                  height={64}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <span className="text-yellow-400 text-sm font-medium text-center">Google Docs</span>
-            </div>
-
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                <Image
-                  src="/img/tool-logos/microsoft-word.png"
-                  alt="Microsoft Word"
-                  width={64}
-                  height={64}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <span className="text-yellow-400 text-sm font-medium text-center">Microsoft Word</span>
-            </div>
+            {/* Removed FL Studio, Celtx, Final Draft, Google Docs, Microsoft Word as requested */}
           </div>
         </div>
       </section>
