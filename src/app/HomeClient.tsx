@@ -10,23 +10,10 @@ import ToolsSection from "@/components/ToolsSection";
 import Footer from "@/components/Footer";
 import ClientsSection from "@/components/ClientsSection";
 
+
 export default function HomeClient() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [headerTextColor, setHeaderTextColor] = useState("text-white");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > window.innerHeight * 0.3) {
-        setHeaderTextColor("text-black");
-      } else {
-        setHeaderTextColor("text-white");
-      }
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const headerTextColor = "text-white";
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

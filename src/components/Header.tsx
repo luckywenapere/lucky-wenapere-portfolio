@@ -13,9 +13,7 @@ export default function Header({ headerTextColor, menuOpen, setMenuOpen }: Heade
   const isScrolled = headerTextColor === "text-black";
   
   return (
-    <header className={`fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 z-30 transition-all duration-300 ${headerTextColor} ${
-      isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
-    }`}>
+    <header className={`fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 z-30 transition-all duration-300 ${headerTextColor} bg-black`}>
       <Link href="/" className="font-bold text-lg hover:opacity-80 transition-opacity">
         LW
       </Link>
