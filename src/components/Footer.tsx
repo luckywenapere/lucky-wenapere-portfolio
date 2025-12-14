@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Instagram, Linkedin, Mail, Github } from "lucide-react";
+import { MessageCircle, Instagram, Linkedin, Mail, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -34,6 +34,12 @@ export default function Footer() {
       icon: Github,
       url: "https://github.com/luckywenapere",
       hoverColor: "hover:text-gray-300"
+    },
+    {
+      name: "X",
+      icon: Twitter,
+      url: "https://x.com/luckydidthis",
+      hoverColor: "hover:text-blue-500"
     }
   ];
 
