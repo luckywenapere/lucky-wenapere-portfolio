@@ -2,82 +2,101 @@
 
 import React from 'react';
 
-interface VideoItem {
+interface Project {
   id: string;
-  year: string;
   title: string;
+  description: string;
+  technologies: string[];
+  year: string;
+  features: string[];
 }
 
 const ShowreelSection: React.FC = () => {
-  const videos: VideoItem[] = [
+  const projects: Project[] = [
     {
-      id: 'OAWxi2aB_BM',
-      year: '2023',
-      title: 'Showreel 2023'
-    },
-    {
-      id: 'W3NKmRQwkRs',
-      year: '2022', 
-      title: 'Showreel 2022'
-    },
-    {
-      id: 'NyTJ3L5i8BY',
-      year: '2019',
-      title: 'Showreel 2019'
+      id: 'vms',
+      title: 'Visitor Management System',
+      description: 'A comprehensive software solution for managing visitor check-ins, access control, and facility security. The system provides real-time tracking, automated notifications, and detailed reporting capabilities.',
+      technologies: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'TypeScript'],
+      year: '2025',
+      features: [
+        'Real-time visitor check-in and check-out',
+        'Access control and badge management',
+        'Automated email notifications',
+        'Advanced reporting and analytics',
+        'User role-based permissions',
+        'Mobile-responsive dashboard'
+      ]
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Showreel
+        <div className="mb-16">
+          <h2 className="text-6xl md:text-8xl font-bold text-black mb-4">
+            SOFTWARE
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A collection of our finest work showcasing creativity, technical excellence, and storytelling mastery.
-          </p>
+          <h2 className="text-6xl md:text-8xl font-bold text-black mb-6">
+            PROJECTS
+          </h2>
+          <div className="w-full h-px bg-black"></div>
         </div>
 
-        {/* Videos Grid */}
-        <div className="space-y-12">
-          {videos.map((video, index) => (
-            <div key={`${video.id}-${video.year}`} className="group">
-              {/* Video Container */}
-              <div className="relative w-full max-w-4xl mx-auto">
+        {/* Projects Grid */}
+        <div className="space-y-16">
+          {projects.map((project) => (
+            <div key={project.id} className="group">
+              <div className="space-y-6">
                 {/* Year Badge */}
-                <div className="flex justify-center mb-4">
-                  <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-green-100 text-green-800 shadow-sm">
-                    {video.year}
-                  </span>
+                <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gray-200 text-gray-900">
+                  {project.year}
                 </div>
-                
-                {/* Video Wrapper with Aspect Ratio */}
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' /* 16:9 aspect ratio */ }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
-                    src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&controls=1&showinfo=0`}
-                    title={video.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+
+                {/* Project Title */}
+                <div>
+                  <h3 className="text-4xl md:text-5xl font-bold text-black mb-4">
+                    {project.title}
+                  </h3>
+                  <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Features */}
+                <div>
+                  <h4 className="text-lg font-semibold text-black mb-4">Key Features:</h4>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {project.features.map((feature, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-green-600 font-bold mr-3 mt-1">•</span>
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Technologies */}
+                <div>
+                  <h4 className="text-lg font-semibold text-black mb-4">Technologies:</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {project.technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg text-sm font-medium border border-gray-300 hover:border-gray-500 transition-colors duration-200"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-gray-300 mt-12"></div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          {/*<p className="text-lg text-gray-600 mb-6">
-            Ready to create something extraordinary together?
-          </p>
-          <button className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
-            Start Your Project
-          </button>*/}
         </div>
       </div>
     </section>
