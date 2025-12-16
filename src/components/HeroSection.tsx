@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-10">
         {/* Mobile Hero Image */}
         <Image
-          src="/img/hero-image-mobile.png"
+          src="/img/hero-image.png"
           alt="Hero portrait mobile"
           fill
           priority
