@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
 
@@ -23,7 +22,6 @@ export default function Header({ headerTextColor, menuOpen, setMenuOpen }: Heade
       >
         MENU
       </button>
-
       {/* Sidebar menu */}
       {menuOpen && (
         <>
@@ -61,6 +59,16 @@ export default function Header({ headerTextColor, menuOpen, setMenuOpen }: Heade
               >
                 About
               </button>
+              <button 
+                onClick={() => {
+                  setMenuOpen(false);
+                  const showreelSection = document.getElementById('showreel-section');
+                  showreelSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hover:text-yellow-400 transition-colors text-left"
+              >
+                Projects
+              </button>
               {/*
               <button 
                 onClick={() => {
@@ -72,12 +80,12 @@ export default function Header({ headerTextColor, menuOpen, setMenuOpen }: Heade
               >
                 Contact
               </button> */}
-                <Link 
-                  href="/posts" 
-                  onClick={() => setMenuOpen(false)}
-                  className="hover:text-yellow-400 transition-colors text-left"
-                >
-                  Thoughts
+              <Link 
+                href="/posts" 
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-yellow-400 transition-colors text-left"
+              >
+                Thoughts
               </Link>
             </nav>
           </div>
