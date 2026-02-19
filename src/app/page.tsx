@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Lucky Wenapere – Portfolio & Creative Projects",
+  title: "Lucky Wenapere",
   description:
-    "Official website of Lucky Wenapere. Explore my portfolio, expertise, creative showreel, and tools I use to build impactful projects.",
+    "Official website of Lucky Wenapere. Explore Lucky's expertise.",
   keywords: ["Lucky Wenapere", "portfolio", "showreel", "creative projects", "next.js", "Luckydidthis", "Lucky Wena"],
   authors: [{ name: "Lucky Wenapere" }],
   verification: {
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Lucky Wenapere – Portfolio & Creative Projects",
+    title: "Lucky Wenapere",
     description:
-      "Discover my expertise, creative works, and tools. Dive into my showreel and explore impactful projects.",
+      "Discover Lucky's expertise, creative works, and tools. Dive into his showreel and explore impactful projects.",
     url: "https://lucky-wenapere.vercel.app",
     siteName: "Lucky Wenapere",
     images: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lucky Wenapere – Portfolio & Creative Projects",
+    title: "Lucky Wenapere",
     description:
-      "Official site of Lucky Wenapere. Explore my portfolio, creative expertise, and projects.",
+      "Official site of Lucky Wenapere. Explore his portfolio, creative expertise, and projects.",
     images: ["https://lucky-wenapere.vercel.app/og-image.jpg"],
   },
 };
