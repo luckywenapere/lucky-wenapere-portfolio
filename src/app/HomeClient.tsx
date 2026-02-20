@@ -35,9 +35,9 @@ export default function HomeClient() {
       <main>
         <HeroSection />
         <ExpertiseSection />
-        <ShowreelSection />
+        {/* <ShowreelSection />
         <ClientsSection />
-        <ToolsSection />
+        <ToolsSection /> */}
       </main>
       <Footer />
     </div>

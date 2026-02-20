@@ -48,7 +48,7 @@ export default function Footer() {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Copyright */}
         <div className="text-sm text-gray-300">
-          Copyright © Lucky Oyinbrakemi Wenapere 2025
+          Lucky Oyinbrakemi Wenapere
         </div>
         
         {/* Social Links */}
