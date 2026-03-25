@@ -1,30 +1,44 @@
-"use client";
-
 export default function ExpertiseSection() {
   return (
-    <section id="expertise-section" className="relative min-h-screen w-full bg-gray-100 z-20">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-6xl md:text-8xl font-bold text-black mb-4">
-            LUCKY&apos;S
-          </h2>
-          <h2 className="text-6xl md:text-8xl font-bold text-black">
-            EXPERTISE
-          </h2>
-          <div className="w-full h-px bg-black mt-6"></div>
+    <section
+      id="approach"
+      className="mx-auto max-w-3xl scroll-mt-24 px-6 py-10"
+    >
+      <div className="border-t border-[var(--line)] pt-8">
+        <h2 className="ui text-[1.05rem] font-semibold text-[var(--foreground)]">
+          About
+        </h2>
+        <div className="mt-5 space-y-4 text-[1.12rem] leading-8">
+          <p>
+            My work usually sits at the intersection of product, software, and
+            creative direction.
+          </p>
+          <p>
+            I like building from the inside: deciding what should exist, making
+            it usable, and shaping how it is presented.
+          </p>
+          <p>
+            The recurring themes are execution, taste, and range without losing
+            focus.
+          </p>
         </div>
+      </div>
 
-        {/* Expertise Description */}
-        <div className="max-w-4xl">
-          <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-            A multidisciplinary creative technologist with a passion for storytelling and innovation across multiple mediums. With expertise in software engineering and video production, Lucky brings visual concepts to life through branding, cinematography, and professional color grading. His technical skills in design and full-stack development enable him to create digital experiences.
+      <div id="current" className="border-t border-[var(--line)] pt-8 mt-10">
+        <h2 className="ui text-[1.05rem] font-semibold text-[var(--foreground)]">
+          Current
+        </h2>
+        <div className="mt-5 space-y-4 text-[1.12rem] leading-8">
+          <p>
+            Urganize is the main thing I&apos;m building right now.
           </p>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-            As the creator of Urganize, he guides the team with a vision of blending artistry with strategy. Lucky&apos;s creative capabilities extend to music production, songwriting, and scriptwriting, where he crafts emotionally impactful narratives. He also specializes in management, helping music artists, brands, and businesses realize their full potential through strategic positioning and marketing campaigns.
+          <p>
+            The work includes product, engineering, distribution, and
+            leadership.
           </p>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-700">
-            Whether designing a visual identity, directing a film, developing a web application, or building a brand strategy, Lucky combines creative excellence with strategic thinking to deliver solutions that resonate and inspire.
+          <p>
+            It is the clearest expression of how I operate now: hands-on,
+            ambitious, and close to the work itself.
           </p>
         </div>
       </div>

@@ -1,43 +1,30 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
-import ShowreelSection from "@/components/ShowreelSection";
-
-import ToolsSection from "@/components/ToolsSection";
 import Footer from "@/components/Footer";
 import ClientsSection from "@/components/ClientsSection";
+import WritingSection from "@/components/WritingSection";
 
+interface HomePost {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+}
 
-export default function HomeClient() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const headerTextColor = "text-white";
+interface HomeClientProps {
+  latestPosts: HomePost[];
+}
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && menuOpen) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [menuOpen]);
-
+export default function HomeClient({ latestPosts }: HomeClientProps) {
   return (
-    <div className="relative w-full font-sans min-h-screen">
-      <Header
-        headerTextColor={headerTextColor}
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-      />
-      <main>
+    <div className="relative min-h-screen w-full font-sans text-[var(--foreground)]">
+      <Header />
+      <main className="relative">
         <HeroSection />
         <ExpertiseSection />
-        {/* <ShowreelSection />
         <ClientsSection />
-        <ToolsSection /> */}
+        <WritingSection posts={latestPosts} />
       </main>
       <Footer />
     </div>

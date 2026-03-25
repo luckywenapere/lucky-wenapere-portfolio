@@ -1,94 +1,77 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
-interface HeaderProps {
-  headerTextColor: string;
-  menuOpen: boolean;
-  setMenuOpen: (open: boolean) => void;
+type Theme = "light" | "dark";
+
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+
+  const storedTheme = window.localStorage.getItem("lucky-theme");
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
-export default function Header({ headerTextColor, menuOpen, setMenuOpen }: HeaderProps) {
-  
+export default function Header() {
+  const [theme, setTheme] = useState<Theme | null>(null);
+
+  useEffect(() => {
+    const initialTheme = getInitialTheme();
+    document.documentElement.dataset.theme = initialTheme;
+    setTheme(initialTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage.setItem("lucky-theme", nextTheme);
+    setTheme(nextTheme);
+  };
+
   return (
-    <header className={`fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 z-30 transition-all duration-300 ${headerTextColor} bg-black`}>
-      <Link href="/" className="font-bold text-lg hover:opacity-80 transition-opacity">
-        LW
-      </Link>
-      <button
-        onClick={() => setMenuOpen(!menuOpen)}
-        className="font-bold text-lg hover:opacity-80 transition-opacity"
-      >
-        MENU
-      </button>
-      {/* Sidebar menu */}
-      {menuOpen && (
-        <>
-          {/* Backdrop */}
-          <div 
-            className="fixed inset-0 bg-black/50 z-30"
-            onClick={() => setMenuOpen(false)}
-          />
-          
-          {/* Sidebar */}
-          <div className="fixed top-0 right-0 h-full w-64 bg-black text-white p-6 z-40 shadow-xl transform transition-transform duration-300">
+    <header className="mx-auto max-w-3xl px-6 pt-8">
+      <div className="flex flex-col gap-3 border-b border-[var(--line)] pb-6 sm:flex-row sm:items-baseline sm:justify-between">
+        <Link
+          href="/"
+          className="ui text-[1.05rem] font-semibold text-[var(--foreground)]"
+        >
+          Lucky Wenapere
+        </Link>
+
+        <nav className="ui flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem] text-[var(--muted)]">
+          <Link href="/">Home</Link>
+          <Link href="/posts">Writing</Link>
+          <a
+            href="mailto:luckywenapere@gmail.com"
+          >
+            Email
+          </a>
+          <a
+            href="https://ng.linkedin.com/in/lucky-wenapere"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          {theme && (
             <button
-              className="mb-6 font-bold hover:opacity-80 transition-opacity"
-              onClick={() => setMenuOpen(false)}
+              type="button"
+              onClick={toggleTheme}
+              className="cursor-pointer text-[var(--link)]"
             >
-              ✕ Close
+              {theme === "dark" ? "Light mode" : "Dark mode"}
             </button>
-            <nav className="flex flex-col gap-4">
-              <button 
-                onClick={() => {
-                  setMenuOpen(false);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="hover:text-yellow-400 transition-colors text-left"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => {
-                  setMenuOpen(false);
-                  const expertiseSection = document.getElementById('expertise-section');
-                  expertiseSection?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="hover:text-yellow-400 transition-colors text-left"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => {
-                  setMenuOpen(false);
-                  const showreelSection = document.getElementById('showreel-section');
-                  showreelSection?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="hover:text-yellow-400 transition-colors text-left"
-              >
-                Projects
-              </button>
-              {/*
-              <button 
-                onClick={() => {
-                  setMenuOpen(false);
-                  const footer = document.getElementById('footer-section');
-                  footer?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="hover:text-yellow-400 transition-colors text-left"
-              >
-                Contact
-              </button> */}
-              <Link 
-                href="/posts" 
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-yellow-400 transition-colors text-left"
-              >
-                Thoughts
-              </Link>
-            </nav>
-          </div>
-        </>
-      )}
+          )}
+        </nav>
+      </div>
     </header>
   );
 }

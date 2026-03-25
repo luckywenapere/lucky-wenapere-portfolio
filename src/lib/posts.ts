@@ -53,3 +53,17 @@ export function getAllPosts() {
     .map((slug) => getPostBySlug(slug))
     .sort((a, b) => (a.meta.date > b.meta.date ? -1 : 1));
 }
+
+export function getExcerpt(content: string, maxLength = 168) {
+  const firstParagraph =
+    content
+      .split(/\r?\n\r?\n/)
+      .map((paragraph) => paragraph.replace(/\s+/g, " ").trim())
+      .find(Boolean) ?? "";
+
+  if (firstParagraph.length <= maxLength) {
+    return firstParagraph;
+  }
+
+  return `${firstParagraph.slice(0, maxLength).trimEnd()}...`;
+}

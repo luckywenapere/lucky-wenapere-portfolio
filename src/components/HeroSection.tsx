@@ -1,47 +1,44 @@
-"use client";
-
-import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[100svh] w-full overflow-hidden bg-black">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/img/bg.png"
-          alt="Hero background"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {/* Reduced gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-        {/* Lighter vignette effect */}
-        <div className="absolute inset-0 [background:radial-gradient(65%_55%_at_50%_40%,transparent,rgba(0,0,0,0.3))]" />
+    <section className="mx-auto max-w-3xl px-6 py-10">
+      <p className="eyebrow">Founder of Urganize</p>
+      <h1 className="ui mt-4 text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl">
+        Lucky Wenapere
+      </h1>
+      <div className="mt-8 space-y-5 text-[1.2rem] leading-9 text-[var(--foreground)]">
+        <p>
+          I&apos;m a founder and engineer working across software, product,
+          brand, and media.
+        </p>
+        <p>
+          Right now I&apos;m building Urganize and writing about execution,
+          identity, and the work behind trying to build something real.
+        </p>
+        <p>I like clear thinking, strong taste, and momentum.</p>
       </div>
-
-      {/* Foreground portrait */}
-      <div className="absolute inset-0 z-10">
-        {/* Mobile Hero Image */}
-        <Image
-          src="/img/hero-image.png"
-          alt="Hero portrait mobile"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover max-w-none object-bottom scale-[1.15] md:hidden"
-        />
-        {/* Desktop Hero Image */}
-        <Image
-          src="/img/hero-image.png"
-          alt="Hero portrait"
-          fill
-          priority
-          sizes="100vw"
-          className="hidden md:block object-cover max-w-none object-bottom scale-[1.15] md:object-contain md:scale-100 md:object-center"
-        />
-      </div>
+      <p className="ui mt-8 text-[0.97rem] text-[var(--muted)]">
+        <Link href="/posts">Writing</Link>
+        {" · "}
+        <a href="mailto:luckywenapere@gmail.com">Email</a>
+        {" · "}
+        <a
+          href="https://ng.linkedin.com/in/lucky-wenapere"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        {" · "}
+        <a
+          href="https://github.com/luckywenapere"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </p>
     </section>
   );
 }

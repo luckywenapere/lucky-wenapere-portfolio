@@ -1,11 +1,19 @@
 import { Metadata } from "next";
 import HomeClient from "./HomeClient";
+import { getAllPosts, getExcerpt } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Lucky Wenapere",
   description:
-    "Official website of Lucky Wenapere. Explore Lucky's expertise.",
-  keywords: ["Lucky Wenapere", "portfolio", "showreel", "creative projects", "next.js", "Luckydidthis", "Lucky Wena"],
+    "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
+  keywords: [
+    "Lucky Wenapere",
+    "Urganize",
+    "founder",
+    "engineer",
+    "creative operator",
+    "builder",
+  ],
   authors: [{ name: "Lucky Wenapere" }],
   verification: {
     google: "pyUkNjr57PrE-5ziJNrc3Iy8W9OY1SMdd0Lms52Ywow",
@@ -16,15 +24,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lucky Wenapere",
     description:
-      "Discover Lucky's expertise, creative works, and tools. Dive into his showreel and explore impactful projects.",
+      "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
     url: "https://lucky-wenapere.vercel.app",
     siteName: "Lucky Wenapere",
     images: [
       {
-        url: "https://lucky-wenapere.vercel.app/og-image.jpg",
+        url: "https://lucky-wenapere.vercel.app/img/hero-image.png",
         width: 1200,
         height: 630,
-        alt: "Lucky Wenapere Portfolio",
+        alt: "Lucky Wenapere",
       },
     ],
     type: "website",
@@ -33,11 +41,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lucky Wenapere",
     description:
-      "Official site of Lucky Wenapere. Explore his portfolio, creative expertise, and projects.",
-    images: ["https://lucky-wenapere.vercel.app/og-image.jpg"],
+      "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
+    images: ["https://lucky-wenapere.vercel.app/img/hero-image.png"],
   },
 };
 
 export default function Home() {
-  return <HomeClient />;
+  const latestPosts = getAllPosts().slice(0, 3).map((post) => ({
+    slug: post.slug,
+    title: post.meta.title,
+    date: post.meta.date,
+    excerpt: getExcerpt(post.content, 156),
+  }));
+
+  return <HomeClient latestPosts={latestPosts} />;
 }

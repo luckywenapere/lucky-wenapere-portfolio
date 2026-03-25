@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Lucky Wenapere",
-  description: "Multifaceted Creator",
+  title: {
+    default: "Lucky Wenapere",
+    template: "%s | Lucky Wenapere",
+  },
+  description:
+    "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -33,10 +38,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${manrope.variable} ${sourceSerif.variable} antialiased`}
       >
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`
+            try {
+              const storedTheme = localStorage.getItem("lucky-theme");
+              const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+              const theme =
+                storedTheme === "dark" || storedTheme === "light"
+                  ? storedTheme
+                  : systemPrefersDark
+                    ? "dark"
+                    : "light";
+              document.documentElement.dataset.theme = theme;
+            } catch {}
+          `}
+        </Script>
         {children}
 
         {/* Vercel Analytics */}

@@ -1,8 +1,7 @@
-"use client";
-
-import { useState } from "react";
-import NewsletterModal from "@/components/NewsletterModal";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { formatDate } from "@/lib/formatDate";
 
 interface PostProps {
   meta: {
@@ -14,35 +13,30 @@ interface PostProps {
 }
 
 export default function PostPageClient({ meta, htmlContent }: PostProps) {
-  const [showModal, setShowModal] = useState(true);
-
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
-      {showModal && (
-        <NewsletterModal onClose={() => setShowModal(false)} />
-      )}
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <Header />
 
-      <Link
-        href="/posts"
-        className="text-yellow-400 hover:underline mb-6 inline-block"
-      >
-        ← Back to Blog
-      </Link>
-
-      <article className="max-w-3xl mx-auto px-6 py-12 prose prose-lg dark:prose-invert">
-        <h1 className="text-4xl font-bold mb-4">{meta.title}</h1>
-        <p className="text-sm text-gray-500 mb-8">
-          {meta.date} — {meta.author}
+      <main className="mx-auto max-w-3xl px-6 py-10">
+        <p className="ui text-[0.92rem] text-[var(--muted)]">
+          <Link href="/posts">Back to writing</Link>
         </p>
-        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-      </article>
+        <h1 className="ui mt-5 text-3xl font-semibold leading-tight text-[var(--foreground)] sm:text-4xl">
+          {meta.title}
+        </h1>
+        <p className="ui mt-3 text-[0.92rem] text-[var(--muted)]">
+          {formatDate(meta.date)} · {meta.author}
+        </p>
 
-      <Link
-        href="/"
-        className="text-yellow-400 hover:underline mt-8 inline-block"
-      >
-        ← Back to Home
-      </Link>
+        <article className="mt-8">
+          <div
+            className="article-content"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
+        </article>
+      </main>
+
+      <Footer />
     </div>
   );
 }

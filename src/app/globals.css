@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffdfa;
+  --surface: #fffdfa;
+  --foreground: #161616;
+  --muted: #64605a;
+  --line: #e9e3da;
+  --link: #1f4d3a;
+}
+
+html[data-theme="dark"] {
+  --background: #111614;
+  --surface: #111614;
+  --foreground: #ece9e2;
+  --muted: #b6b0a6;
+  --line: #2a342e;
+  --link: #8fbea0;
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-source-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--background);
 }
 
 body {
+  min-height: 100svh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-source-serif), serif;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  color: inherit;
+}
+
+.ui {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.eyebrow {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.article-content {
+  color: var(--foreground);
+  font-size: 1.16rem;
+  line-height: 1.8;
+}
+
+.article-content > * + * {
+  margin-top: 1.1rem;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.article-content h2 {
+  margin-top: 2.3rem;
+  font-size: 1.6rem;
+}
+
+.article-content h3 {
+  margin-top: 1.8rem;
+  font-size: 1.3rem;
+}
+
+.article-content p {
+  color: var(--foreground);
+}
+
+.article-content a {
+  color: var(--link);
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 1.2rem;
+}
+
+.article-content li + li {
+  margin-top: 0.3rem;
+}
+
+.article-content blockquote {
+  border-left: 2px solid var(--line);
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .article-content {
+    font-size: 1.06rem;
+    line-height: 1.75;
+  }
 }

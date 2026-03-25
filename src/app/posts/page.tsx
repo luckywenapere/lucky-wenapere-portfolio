@@ -1,27 +1,55 @@
 import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
+import { Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { formatDate } from "@/lib/formatDate";
+import { getAllPosts, getExcerpt } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+};
 
 export default function BlogPage() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().map((post) => ({
+    slug: post.slug,
+    title: post.meta.title,
+    date: post.meta.date,
+    author: post.meta.author,
+    excerpt: getExcerpt(post.content, 190),
+  }));
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12">
-      <Link href="/">
-        ← Back to Home
-      </Link>
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <Header />
 
-      <h1 className="text-4xl font-bold mb-8">Welcome to my blog where I document my life and the lessons I learn along the way.</h1>
+      <main className="mx-auto max-w-3xl px-6 py-10">
+        <h1 className="ui text-3xl font-semibold text-[var(--foreground)]">
+          Writing
+        </h1>
+        <p className="mt-4 text-[1.12rem] leading-8">
+          Notes on building, identity, ambition, and the work behind the work.
+        </p>
 
-      <ul className="space-y-8">
-        {posts.map((post) => (
-          <li key={post.slug} className="p-6 border rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-            <Link href={`/posts/${post.slug}`}>
-              <h2 className="text-2xl font-semibold mb-2 hover:text-yellow-400">{post.meta.title}</h2>
-            </Link>
-            <p className="text-sm text-gray-500">{post.meta.date} — {post.meta.author}</p>
-          </li>
-        ))}
-      </ul>
+        <ul className="mt-8 space-y-7">
+          {posts.map((post) => (
+            <li key={post.slug} className="border-b border-[var(--line)] pb-7">
+              <p className="ui text-[0.9rem] text-[var(--muted)]">
+                {formatDate(post.date)} · {post.author}
+              </p>
+              <h2 className="ui mt-2 text-[1.35rem] font-semibold leading-7 text-[var(--foreground)]">
+                <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+              </h2>
+              <p className="mt-3 text-[1.05rem] leading-8">
+                {post.excerpt}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </main>
+
+      <Footer />
     </div>
   );
 }
