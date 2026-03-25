@@ -2,13 +2,38 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 import { formatDate } from "@/lib/formatDate";
 import { getAllPosts, getExcerpt } from "@/lib/posts";
+import {
+  absoluteUrl,
+  defaultOpenGraphImage,
+  siteConfig,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Writing",
   description:
     "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+  alternates: {
+    canonical: "/posts",
+  },
+  openGraph: {
+    title: `Writing | ${siteConfig.name}`,
+    description:
+      "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+    url: absoluteUrl("/posts"),
+    type: "website",
+    images: [defaultOpenGraphImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Writing | ${siteConfig.name}`,
+    description:
+      "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+    creator: siteConfig.xHandle,
+    images: [defaultOpenGraphImage.url],
+  },
 };
 
 export default function BlogPage() {
@@ -20,8 +45,23 @@ export default function BlogPage() {
     excerpt: getExcerpt(post.content, 190),
   }));
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: `${siteConfig.name} Writing`,
+    description:
+      "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+    url: absoluteUrl("/posts"),
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <StructuredData data={structuredData} />
       <Header />
 
       <main className="mx-auto max-w-3xl px-6 py-10">

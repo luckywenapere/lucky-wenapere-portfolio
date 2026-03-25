@@ -1,48 +1,31 @@
 import { Metadata } from "next";
 import HomeClient from "./HomeClient";
+import StructuredData from "@/components/StructuredData";
 import { getAllPosts, getExcerpt } from "@/lib/posts";
+import {
+  defaultOpenGraphImage,
+  siteConfig,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Lucky Wenapere",
-  description:
-    "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
-  keywords: [
-    "Lucky Wenapere",
-    "Urganize",
-    "founder",
-    "engineer",
-    "creative operator",
-    "builder",
-  ],
-  authors: [{ name: "Lucky Wenapere" }],
-  verification: {
-    google: "pyUkNjr57PrE-5ziJNrc3Iy8W9OY1SMdd0Lms52Ywow",
-    other: {
-      msvalidate: ["AB4A2213C8F53CCA8168D621E35D9363"],
-    },
+  title: siteConfig.name,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
   },
   openGraph: {
-    title: "Lucky Wenapere",
-    description:
-      "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
-    url: "https://lucky-wenapere.vercel.app",
-    siteName: "Lucky Wenapere",
-    images: [
-      {
-        url: "https://lucky-wenapere.vercel.app/img/hero-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Lucky Wenapere",
-      },
-    ],
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
     type: "website",
+    images: [defaultOpenGraphImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lucky Wenapere",
-    description:
-      "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
-    images: ["https://lucky-wenapere.vercel.app/img/hero-image.png"],
+    title: siteConfig.name,
+    description: siteConfig.description,
+    creator: siteConfig.xHandle,
+    images: [defaultOpenGraphImage.url],
   },
 };
 
@@ -54,5 +37,31 @@ export default function Home() {
     excerpt: getExcerpt(post.content, 156),
   }));
 
-  return <HomeClient latestPosts={latestPosts} />;
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      inLanguage: "en",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      image: defaultOpenGraphImage.url,
+      email: `mailto:${siteConfig.email}`,
+      sameAs: [...siteConfig.socialLinks],
+      description: siteConfig.description,
+    },
+  ];
+
+  return (
+    <>
+      <StructuredData data={structuredData} />
+      <HomeClient latestPosts={latestPosts} />
+    </>
+  );
 }
