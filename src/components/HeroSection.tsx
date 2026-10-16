@@ -2,27 +2,28 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-10">
-      <p className="eyebrow">Founder of Urganize</p>
-      <h1 className="ui mt-4 text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl">
-        Oyin Wenapere
+    <section className="mx-auto flex min-h-[78svh] max-w-3xl flex-col items-center justify-center px-6 py-20 text-center">
+      <p className="eyebrow">Oyin Wenapere</p>
+      <h1 className="mt-8 max-w-2xl text-balance text-[2.6rem] font-medium leading-[1.08] tracking-[-0.02em] text-[var(--foreground)] sm:text-[3.6rem]">
+        I see the whole system.
+        <br />
+        <span className="italic text-[var(--muted)]">Then I build it.</span>
       </h1>
-      <div className="mt-8 space-y-5 text-[1.2rem] leading-9 text-[var(--foreground)]">
-        <p>
-          I&apos;m a founder and engineer working across software, product,
-          brand, and media.
-        </p>
-        <p>
-          Right now I&apos;m building Urganize and writing about execution,
-          identity, and the work behind trying to build something real.
-        </p>
-        <p>I like clear thinking, strong taste, and momentum.</p>
-      </div>
-      <p className="ui mt-8 text-[0.97rem] text-[var(--muted)]">
+      <div className="mx-auto mt-10 h-px w-16 bg-[var(--line)]" />
+      <p className="ui mt-10 text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[var(--foreground)]">
+        Builder <span className="mx-2 text-[var(--muted)]">·</span> Strategist{" "}
+        <span className="mx-2 text-[var(--muted)]">·</span> Technologist
+      </p>
+      <p className="mx-auto mt-8 max-w-xl text-pretty text-[1.2rem] leading-9 text-[var(--foreground)]">
+        I think in first principles, work in long arcs, and turn ideas into
+        things that run without me. Software, film, companies, frameworks:
+        different mediums, one mind.
+      </p>
+      <p className="ui mt-12 text-[0.95rem] text-[var(--muted)]">
         <Link href="/posts">Writing</Link>
-        {" · "}
+        <span className="mx-3">·</span>
         <a href="mailto:wenapere@urganize.app">Email</a>
-        {" · "}
+        <span className="mx-3">·</span>
         <a
           href="https://www.linkedin.com/in/oyinwenapere"
           target="_blank"
@@ -30,7 +31,7 @@ export default function HeroSection() {
         >
           LinkedIn
         </a>
-        {" · "}
+        <span className="mx-3">·</span>
         <a
           href="https://github.com/luckywenapere"
           target="_blank"

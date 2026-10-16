@@ -9,7 +9,7 @@ import {
 } from "@/lib/site";
 
 interface Params {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -19,7 +19,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   const description = getExcerpt(post.content, 160);
   const canonicalPath = `/posts/${post.slug}`;
 
@@ -49,8 +50,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Params) {
-  const post = getPostBySlug(params.slug);
-  const { meta, htmlContent } = await getPostHtml(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  const { meta, htmlContent } = await getPostHtml(slug);
   const description = getExcerpt(post.content, 160);
   const canonicalPath = `/posts/${post.slug}`;
   const structuredData = {
