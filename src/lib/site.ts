@@ -1,4 +1,4 @@
-const fallbackSiteUrl = "https://lucky-wenapere.vercel.app";
+const fallbackSiteUrl = "https://oyin-wenapere.vercel.app";
 
 function normalizeSiteUrl(url: string) {
   return url.startsWith("http://") || url.startsWith("https://")
