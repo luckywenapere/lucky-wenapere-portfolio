@@ -1,7 +1,7 @@
 const now = [
   { name: "Urganize", role: "Building" },
   { name: "Afreximbank, African Trade Centre", role: "Tech & video" },
-  { name: "MEAY Dev", role: "Growth" },
+  { name: "MEAY", role: "Growth" },
   { name: "Kind Humanitarian Initiative", role: "Volunteer tech lead" },
   { name: "Master's in Information Technology", role: "In progress" },
 ];

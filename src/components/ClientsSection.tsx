@@ -2,7 +2,7 @@ const clients = [
   "Afreximbank",
   "AATC",
   "Pentagon Securities",
-  "MEAY Dev",
+  "MEAY",
   "Kind Humanitarian Initiative",
 ];
 
