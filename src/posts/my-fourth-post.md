@@ -1,7 +1,7 @@
 ---
 title: "How I Got into AI"
 date: "2026-01-08"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 

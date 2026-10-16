@@ -1,7 +1,7 @@
 ---
 title: "I am now owning my Identity, Zero Cares Given"
 date: "2025-12-12"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 

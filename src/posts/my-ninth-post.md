@@ -1,7 +1,7 @@
 ---
 title: "Building for 10 Months Straight"
 date: "2026-09-02"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 I was warned about the dangers of building a company, but I was never warned about the implications it would have on the rest of my life.

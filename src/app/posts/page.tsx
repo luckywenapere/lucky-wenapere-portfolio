@@ -14,14 +14,14 @@ import {
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+    "Writing from Oyin Wenapere on building, identity, ambition, and execution.",
   alternates: {
     canonical: "/posts",
   },
   openGraph: {
     title: `Writing | ${siteConfig.name}`,
     description:
-      "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+      "Writing from Oyin Wenapere on building, identity, ambition, and execution.",
     url: absoluteUrl("/posts"),
     type: "website",
     images: [defaultOpenGraphImage],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Writing | ${siteConfig.name}`,
     description:
-      "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+      "Writing from Oyin Wenapere on building, identity, ambition, and execution.",
     creator: siteConfig.xHandle,
     images: [defaultOpenGraphImage.url],
   },
@@ -50,7 +50,7 @@ export default function BlogPage() {
     "@type": "Blog",
     name: `${siteConfig.name} Writing`,
     description:
-      "Writing from Lucky Wenapere on building, identity, ambition, and execution.",
+      "Writing from Oyin Wenapere on building, identity, ambition, and execution.",
     url: absoluteUrl("/posts"),
     author: {
       "@type": "Person",

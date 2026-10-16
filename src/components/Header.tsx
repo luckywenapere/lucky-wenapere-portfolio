@@ -43,19 +43,19 @@ export default function Header() {
           href="/"
           className="ui text-[1.05rem] font-semibold text-[var(--foreground)]"
         >
-          Lucky Wenapere
+          Oyin Wenapere
         </Link>
 
         <nav className="ui flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem] text-[var(--muted)]">
           <Link href="/">Home</Link>
           <Link href="/posts">Writing</Link>
           <a
-            href="mailto:luckywenapere@gmail.com"
+            href="mailto:wenapere@urganize.app"
           >
             Email
           </a>
           <a
-            href="https://ng.linkedin.com/in/lucky-wenapere"
+            href="https://www.linkedin.com/in/oyinwenapere"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -1,7 +1,7 @@
 ---
 title: "On Synthesizing"
 date: "2026-05-28"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 

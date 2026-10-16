@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="mx-auto max-w-3xl px-6 py-10">
       <p className="eyebrow">Founder of Urganize</p>
       <h1 className="ui mt-4 text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl">
-        Lucky Wenapere
+        Oyin Wenapere
       </h1>
       <div className="mt-8 space-y-5 text-[1.2rem] leading-9 text-[var(--foreground)]">
         <p>
@@ -21,10 +21,10 @@ export default function HeroSection() {
       <p className="ui mt-8 text-[0.97rem] text-[var(--muted)]">
         <Link href="/posts">Writing</Link>
         {" · "}
-        <a href="mailto:luckywenapere@gmail.com">Email</a>
+        <a href="mailto:wenapere@urganize.app">Email</a>
         {" · "}
         <a
-          href="https://ng.linkedin.com/in/lucky-wenapere"
+          href="https://www.linkedin.com/in/oyinwenapere"
           target="_blank"
           rel="noopener noreferrer"
         >

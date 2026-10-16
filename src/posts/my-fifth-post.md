@@ -1,7 +1,7 @@
 ---
 title: "Life Update: Where I'm AT"
 date: "2026-01-23"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 

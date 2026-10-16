@@ -1,7 +1,7 @@
 ---
 title: "I had to end something to make space for something new."
 date: "2025-12-19"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: "How I Create My Luck. No Balance, Just Motion"
 date: "2025-11-16"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 

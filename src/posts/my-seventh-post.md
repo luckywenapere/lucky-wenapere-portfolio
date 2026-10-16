@@ -1,7 +1,7 @@
 ---
 title: "Rise or Fall"
 date: "2026-04-27"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 

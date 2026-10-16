@@ -13,15 +13,15 @@ const siteUrl =
   fallbackSiteUrl;
 
 export const siteConfig = {
-  name: "Lucky Wenapere",
-  title: "Lucky Wenapere",
+  name: "Oyin Wenapere",
+  title: "Oyin Wenapere",
   description:
     "Founder of Urganize. Engineer, creative operator, and builder working across product, software, brand, and media.",
   url: normalizeSiteUrl(siteUrl),
   locale: "en_US",
-  email: "luckywenapere@gmail.com",
+  email: "wenapere@urganize.app",
   keywords: [
-    "Lucky Wenapere",
+    "Oyin Wenapere",
     "Urganize",
     "founder",
     "engineer",
@@ -31,12 +31,12 @@ export const siteConfig = {
     "software",
     "writing",
   ],
-  xHandle: "@luckydidthis",
+  xHandle: "@oyinwenapere",
   socialLinks: [
     "https://github.com/luckywenapere",
-    "https://x.com/luckydidthis",
-    "https://instagram.com/luckydidthis",
-    "https://ng.linkedin.com/in/lucky-wenapere",
+    "https://x.com/oyinwenapere",
+    "https://instagram.com/oyinwenapere",
+    "https://www.linkedin.com/in/oyinwenapere",
   ],
 } as const;
 

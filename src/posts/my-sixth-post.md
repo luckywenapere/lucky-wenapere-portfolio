@@ -1,7 +1,7 @@
 ---
 title: "Life Update: What Life Has Been Like"
 date: "2026-03-25"
-author: "Lucky Wenapere"
+author: "Oyin Wenapere"
 ---
 
 
