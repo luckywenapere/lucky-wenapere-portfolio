@@ -16,7 +16,7 @@ export const siteConfig = {
   name: "Oyin Wenapere",
   title: "Oyin Wenapere",
   description:
-    "Oyin Wenapere. Builder, strategist, technologist. I see the whole system, then I build it.",
+    "Oyin Wenapere. I see the whole system. Technologist, polymath. Building Urganize.",
   url: normalizeSiteUrl(siteUrl),
   locale: "en_US",
   email: "wenapere@urganize.app",
@@ -27,7 +27,7 @@ export const siteConfig = {
     "engineer",
     "strategist",
     "technologist",
-    "builder",
+    "polymath",
     "product",
     "software",
     "writing",

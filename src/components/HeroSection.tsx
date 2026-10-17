@@ -6,18 +6,22 @@ export default function HeroSection() {
       <p className="eyebrow">Oyin Wenapere</p>
       <h1 className="mt-8 max-w-2xl text-balance text-[2.6rem] font-medium leading-[1.08] tracking-[-0.02em] text-[var(--foreground)] sm:text-[3.6rem]">
         I see the whole system.
-        <br />
-        <span className="italic text-[var(--muted)]">Then I build it.</span>
       </h1>
       <div className="mx-auto mt-10 h-px w-16 bg-[var(--line)]" />
       <p className="ui mt-10 text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[var(--foreground)]">
-        Builder <span className="mx-2 text-[var(--muted)]">·</span> Strategist{" "}
-        <span className="mx-2 text-[var(--muted)]">·</span> Technologist
+        Technologist <span className="mx-2 text-[var(--muted)]">·</span> Polymath
       </p>
       <p className="mx-auto mt-8 max-w-xl text-pretty text-[1.2rem] leading-9 text-[var(--foreground)]">
         I think in first principles, work in long arcs, and turn ideas into
         things that run without me. Software, film, companies, frameworks:
         different mediums, one mind.
+      </p>
+      <p className="ui mt-8 text-[0.95rem] text-[var(--muted)]">
+        Building{" "}
+        <a href="https://urganize.app" target="_blank" rel="noopener noreferrer">
+          Urganize
+        </a>
+        .
       </p>
       <p className="ui mt-12 text-[0.95rem] text-[var(--muted)]">
         <Link href="/posts">Writing</Link>
