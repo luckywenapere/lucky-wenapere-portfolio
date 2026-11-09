@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { defaultOpenGraphImage, siteConfig } from "@/lib/site";
+import { themeInitScript } from "@/lib/theme";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -89,20 +90,9 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${sourceSerif.variable} antialiased`}
       >
+        {/* Sets html[data-theme] before first paint. Logic lives in src/lib/theme.ts. */}
         <Script id="theme-init" strategy="beforeInteractive">
-          {`
-            try {
-              const storedTheme = localStorage.getItem("lucky-theme");
-              const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-              const theme =
-                storedTheme === "dark" || storedTheme === "light"
-                  ? storedTheme
-                  : systemPrefersDark
-                    ? "dark"
-                    : "light";
-              document.documentElement.dataset.theme = theme;
-            } catch {}
-          `}
+          {themeInitScript}
         </Script>
         {children}
 

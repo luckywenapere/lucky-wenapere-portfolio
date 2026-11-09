@@ -13,9 +13,7 @@ interface Params {
 }
 
 export function generateStaticParams() {
-  return getPostSlugs().map((slug) => ({
-    slug: slug.replace(/\.md$/, ""),
-  }));
+  return getPostSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {

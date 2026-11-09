@@ -12,8 +12,12 @@ export interface PostMeta {
   author: string;
 }
 
+/** Slugs without the `.md` extension, one per Markdown file in src/posts. */
 export function getPostSlugs(): string[] {
-  return fs.readdirSync(postsDirectory);
+  return fs
+    .readdirSync(postsDirectory)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => file.replace(/\.md$/, ""));
 }
 
 export function getPostBySlug(slug: string) {

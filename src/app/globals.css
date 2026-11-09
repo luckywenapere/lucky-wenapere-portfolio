@@ -57,6 +57,19 @@ button {
   color: inherit;
 }
 
+/* Theme toggle label, driven by html[data-theme] (see src/lib/theme.ts).
+   Hidden entirely until the bootstrap script has run, so with no JS there is
+   no dead button. */
+html:not([data-theme]) .theme-toggle,
+.theme-toggle [data-show-in="dark"],
+html[data-theme="dark"] .theme-toggle [data-show-in="light"] {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle [data-show-in="dark"] {
+  display: inline;
+}
+
 .ui {
   font-family: var(--font-manrope), sans-serif;
 }

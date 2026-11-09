@@ -1,40 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
-
-type Theme = "light" | "dark";
-
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") {
-    return "light";
-  }
-
-  const storedTheme = window.localStorage.getItem("lucky-theme");
-  if (storedTheme === "dark" || storedTheme === "light") {
-    return storedTheme;
-  }
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
+import { followSystemTheme, toggleTheme } from "@/lib/theme";
 
 export default function Header() {
-  const [theme, setTheme] = useState<Theme | null>(null);
-
-  useEffect(() => {
-    const initialTheme = getInitialTheme();
-    document.documentElement.dataset.theme = initialTheme;
-    setTheme(initialTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = nextTheme;
-    window.localStorage.setItem("lucky-theme", nextTheme);
-    setTheme(nextTheme);
-  };
+  useEffect(followSystemTheme, []);
 
   return (
     <header className="mx-auto max-w-3xl px-6 pt-8">
@@ -61,15 +32,16 @@ export default function Header() {
           >
             LinkedIn
           </a>
-          {theme && (
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="cursor-pointer text-[var(--link)]"
-            >
-              {theme === "dark" ? "Light mode" : "Dark mode"}
-            </button>
-          )}
+          {/* Label is picked by CSS from html[data-theme], so it is right on
+              first paint and needs no React state. See src/lib/theme.ts. */}
+          <button
+            type="button"
+            onClick={() => toggleTheme()}
+            className="theme-toggle cursor-pointer text-[var(--link)]"
+          >
+            <span data-show-in="light">Dark mode</span>
+            <span data-show-in="dark">Light mode</span>
+          </button>
         </nav>
       </div>
     </header>
